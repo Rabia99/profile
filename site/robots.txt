@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://rabia790.github.io/portfoliorabia/sitemap.xml
-
