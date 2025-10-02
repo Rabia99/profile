@@ -1,215 +1,329 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rabia Bembi — Full-Stack App Developer</title>
-<meta name="description" content="Full-stack app developer specializing in React Native, Firebase, and Dynamics 365. I build polished, reliable, user-first products for high-profile clients.">
-<link rel="canonical" href="https://rabia790.github.io/portfoliorabia/">
-<meta property="og:title" content="Rabia Bembi — Full-Stack App Developer">
-<meta property="og:description" content="React Native • Firebase • Dynamics 365 • UX-first • Multi-role platforms">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://rabia790.github.io/portfoliorabia/">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Rabia Bembi",
-  "jobTitle": "Full-Stack App Developer",
-  "email": "mailto:rabiabembi@gmail.com",
-  "url": "https://rabia790.github.io/portfoliorabia/",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "North York",
-    "addressRegion": "Ontario",
-    "addressCountry": "Canada"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/rabiabembi",
-    "https://topmate.io/rabia_bembi",
-    "https://rabia790.github.io/portfoliorabia/"
-  ],
-  "knowsAbout": [
-    "React Native",
-    "Firebase",
-    "Firestore",
-    "Dynamics 365",
-    "Jenkins",
-    "Swift",
-    "PHP",
-    "Python"
-  ]
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rabia Bembi — Mobile & Full-Stack App Developer</title>
+  <meta name="description" content="Personal portfolio: projects, notes, and learning. Mobile (React Native), Web (React/Vue/PHP), Backend (Node/Firebase), Cloud (GCP), AI agents (Python/TS)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f9fafb; --bg-2:#ffffff; --card:#ffffff; --text:#111827; --muted:#6b7280;
+      --brand:#2563eb; --brand-2:#06b6d4; --ok:#10b981; --warn:#f59e0b;
+      --max:1100px; --radius:18px; --shadow:0 6px 20px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;font-weight:800}
+    .brand b{font-size:15px;letter-spacing:.2px}
+    .nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+   .nav a{color:var(--text);opacity:.85;font-weight:500}
+    .nav a:hover{opacity:1}
+    .nav .cta{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:10px 14px;border-radius:12px;font-weight:700}
+
+    section{padding:56px 0}
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:18px}
+    h1,h2,h3{margin:0}
+    h2{font-size:26px}
+    .sub{color:var(--muted);font-size:14px}
+
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{color:var(--muted);font-size:14px;margin:0}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .chip{border:1px solid #d1d5db;border-radius:999px;font-size:12px;padding:6px 10px;color:#374151;background:#f9fafb}
+    .chip.badge{background:#eef2ff}
+    .impact{margin-top:10px;border-top:1px dashed #e5e7eb;padding-top:10px;font-size:14px}
+
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:44px 0 10px}
+    .hero h1{font-size:40px;line-height:1.15}
+    .accent{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{color:var(--muted);font-size:17px;margin:10px 0 20px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid #d1d5db;padding:12px 14px;border-radius:14px;font-weight:700;color:var(--text);background:#fff}
+    .btn.primary{border-color:transparent;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
+
+    .heroCard{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+    .heroCard .row{display:flex;gap:16px}
+
+    /* Status tags */
+    .status{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px;border:1px solid #e5e7eb;margin-left:8px}
+    .ok{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
+    .progress{background:#fff7ed;color:#7c2d12;border-color:#fed7aa}
+    .planned{background:#f1f5f9;color:#334155;border-color:#e2e8f0}
+
+    footer{padding:32px 0;border-top:1px solid #e5e7eb;color:#6b7280;background:#f9fafb}
+    .avatar {
+  border-radius: 50%;
+  object-fit: cover;   /* keeps aspect ratio inside the circle */
 }
- </script>
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+      .nav ul{display:none}
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-<nav class="nav" aria-label="Primary">
-<a class="logo" href="#home" aria-label="Rabia Bembi home">RB</a>
-<button class="nav-toggle" aria-label="Open navigation"><span></span><span></span><span></span></button>
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#certs">Certifications</a></li>
-<li><a href="#testimonials">Testimonials</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-</header>
-
-<main id="home">
-  <section class="hero" data-reveal>
-    <div class="container hero-grid">
-      <!-- Profile Image -->
-      <div class="hero-photo">
-        <img src="assets/images/IMG_9089.jpg" alt="Rabia Bembi photo">
-      </div>
-  
-      <!-- Hero Text -->
-      <div class="hero-text">
-        <h1><span class="accent">Full-Stack</span> App Developer crafting products with purpose</h1>
-        <p>React Native • Firebase • Dynamics 365 • UX-first • Multi-role platforms</p>
-        <div class="cta">
-          <a class="btn primary" href="#contact">Work with me</a>
-          <a class="btn ghost" href="https://rabia790.github.io/portfoliorabia/" target="_blank" rel="noopener">View Portfolio</a>
-        </div>
-        <ul class="quick-meta" aria-label="Quick info">
-          <li>North York, Ontario</li>
-          <li><a href="mailto:rabiabembi@gmail.com">rabiabembi@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/rabiabembi" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://topmate.io/rabia_bembi" target="_blank" rel="noopener">Topmate</a></li>
-        </ul>
-      </div>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><div class="logo">RB</div><b>Rabia Bembi</b></div>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#certs">Certifications</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a class="cta" href="#contact">Get in touch</a></li>
+      </ul>
     </div>
-  </section>
+  </header>
 
-<section id="about" class="section" data-reveal>
-<div class="container">
-<h2>About</h2>
-<p>I'm a full-stack app developer with a passion for building real-world solutions that blend powerful logic, clean design, and seamless user experience. I design ecosystems—from Git strategy and OAuth flows to UI polish and database structures—balancing business goals, user needs, and technical excellence.</p>
-<ul class="strengths">
-<li>Architect apps from zero to launch</li>
-<li>React Native (Firebase, Firestore, CRM integrations)</li>
-<li>UI/UX-first development</li>
-<li>Problem-solving across the stack</li>
-<li>Git & team-ready workflows</li>
-</ul>
-</div>
-</section>
+  <main>
+    <!-- HERO -->
+    <section class="wrap hero">
+      <div>
+        <h1>I build <span class="accent">production‑ready apps & platforms</span> — this is my workbench.</h1>
+        <p class="lead">Mobile (React Native) • Web (React/Vue/PHP) • Backend (Node, Firebase) • Cloud (GCP) • AI agents (OpenAI, Python/TS)</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Browse projects</a>
+          <a class="btn" href="#notes">Read notes</a>
+          <a class="btn" href="assets/Rabia_Bembi_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        </div>
+      </div>
+      <div class="heroCard">
+        <div class="row">
+          <img src="assets/images/IMG_9089.jpg" alt="Rabia Bembi" 
+     width="370" height="160" class="avatar"/>
 
-<section id="experience" class="section alt" data-reveal>
-<div class="container">
-<h2>Experience</h2>
-<div class="timeline">
-<div class="item" data-reveal>
-<h3>CygniSoft Inc. — Software Developer</h3>
-<span class="meta">Jun 2024 – Present • Etobicoke, ON</span>
-<p>Bridge technical delivery and business strategy. Lead client communication, negotiate scope, and ship software aligned to business goals.</p>
-</div>
-<div class="item" data-reveal>
-<h3>Freelancer — Software Developer</h3>
-<span class="meta">Jan 2023 – Present • Canada</span>
-<p>Delivered end-to-end apps with Firebase auth, Firestore, and multi-role platforms. Focus on UX polish, performance, and reliability.</p>
-</div>
-<div class="item" data-reveal>
-<h3>Lambton College — Work Integrated Learning</h3>
-<span class="meta">Jan 2024 – Apr 2024 • Toronto, ON</span>
-</div>
-<div class="item" data-reveal>
-<h3>Swap IT Hub — Software Developer</h3>
-<span class="meta">Apr 2021 – Aug 2022 • Punjab, India</span>
-</div>
-<div class="item" data-reveal>
-<h3>CACMS — Deep Learning Researcher</h3>
-<span class="meta">Feb 2020 – Apr 2020 • Amritsar, India</span>
-</div>
-</div>
-</div>
-</section>
+          <div>
+            <h3 style="margin:0 0 6px">Now</h3>
+            <p style="margin:0">Ontario, Canada • Building mobile & web products • Exploring AI agents and GCP</p>
+            <div class="meta" style="margin-top:10px">
+              <span class="chip badge">End‑to‑end delivery</span>
+              <span class="chip badge">UX craft</span>
+              <span class="chip badge">Perf & reliability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="projects" class="section" data-reveal>
-<div class="container">
-<h2>Projects</h2>
-<div class="timeline">
-<div class="item">
-<h3>Selected Work</h3>
-<p>Explore featured apps and case studies demonstrating multi-role platforms, Firebase integrations, and UX-first delivery.</p>
-<p><a class="btn ghost" href="https://rabia790.github.io/portfoliorabia/" target="_blank" rel="noopener">View Projects</a></p>
-</div>
-</div>
-</div>
-</section>
+    <!-- PROJECTS -->
+    <section id="projects" class="wrap">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <span class="sub">A mix of shipped work, case studies, and experiments. Each card: Problem → What I built → Stack → Notes.</span>
+      </div>
+      <div class="grid cols-3" id="project-grid">
+        <article class="card" id="p-fieldops">
+          <h3>FieldOps Mobile — RN + Firebase</h3>
+          <p>Role‑based mobile app with offline data, push notifications, and crash analytics.</p>
+          <div class="impact">
+            <ul>
+              <li><b>Problem:</b> Field teams need reliable workflows with weak connectivity.</li>
+              <li><b>Built:</b> Auth & roles, offline cache, error boundaries, OTA updates.</li>
+              <li><b>Stack:</b> React Native, Firebase/Firestore, Cloud Functions.</li>
+              <li><b>Notes:</b> 99% crash‑free; onboarding time −60% (placeholder).</li>
+            </ul>
+          </div>
+          <div class="meta"><span class="chip">React Native</span><span class="chip">Firebase</span></div>
+        </article>
 
-<section id="skills" class="section" data-reveal>
-<div class="container">
-<h2>Skills</h2>
-<ul class="pill-list">
-<li>React Native</li>
-<li>Firebase</li>
-<li>Firestore</li>
-<li>Dynamics 365</li>
-<li>Jenkins</li>
-<li>Swift</li>
-<li>PHP</li>
-<li>Python</li>
-</ul>
-</div>
-</section>
+        <article class="card" id="p-launchpad">
+          <h3>LaunchPad — High‑Converting Landing Pages</h3>
+          <p>Performance‑first landing system with A/B testing hooks and analytics.</p>
+          <div class="impact">
+            <ul>
+              <li><b>Problem:</b> Teams need to iterate quickly on conversion.</li>
+              <li><b>Built:</b> Component library, SEO meta, forms, tracking.</li>
+              <li><b>Stack:</b> React (Next.js) + PHP or Node API.</li>
+              <li><b>Notes:</b> +X% CVR lift (placeholder).</li>
+            </ul>
+          </div>
+          <div class="meta"><span class="chip">React</span><span class="chip">PHP</span><span class="chip">Next.js</span></div>
+        </article>
 
-<section id="certs" class="section alt" data-reveal>
-<div class="container">
-<h2>Certifications</h2>
-<ul class="grid two">
-<li>Business Analyst</li>
-<li>Machine Learning</li>
-<li>Software Engineer - IT Services</li>
-<li>Data Processing Specialist</li>
-<li>Software Engineer - Product</li>
-</ul>
-</div>
-</section>
+        <article class="card" id="p-customer-portal">
+          <h3>Customer Portal — Node.js + Vue.js on GCP</h3>
+          <p>Secure dashboard with RBAC, real‑time updates, and audit logs.</p>
+          <div class="impact">
+            <ul>
+              <li><b>Problem:</b> Customers need a single control center.</li>
+              <li><b>Built:</b> Server APIs, Firestore/SQL, Cloud Run deploys.</li>
+              <li><b>Stack:</b> Vue, Node.js, GCP (Run, Pub/Sub, Secrets).</li>
+              <li><b>Notes:</b> Median API &lt;800ms (placeholder).</li>
+            </ul>
+          </div>
+          <div class="meta"><span class="chip">Vue.js</span><span class="chip">Node.js</span><span class="chip">GCP</span></div>
+        </article>
 
-<section id="testimonials" class="section" data-reveal>
-<div class="container">
-<h2>Testimonials</h2>
-<div class="testimonials">
-<blockquote>Rabia delivers with polish and pragmatism. Our mobile MVP shipped faster than expected and looked production-ready.</blockquote>
-<cite>— Client, Startup Founder</cite>
-</div>
-</div>
-</section>
+        <article class="card" id="p-support-ai">
+          <h3>Support AI — Python/TS Agents</h3>
+          <p>OpenAI agent that answers FAQs, routes tasks, and summarizes conversations.</p>
+          <div class="impact">
+            <ul>
+              <li><b>Problem:</b> Repetitive support questions consume time.</li>
+              <li><b>Built:</b> Tools for search, ticket notes, human handoff.</li>
+              <li><b>Stack:</b> Python, TypeScript, OpenAI API, GCP.</li>
+              <li><b>Notes:</b> Ticket load −X% (placeholder).</li>
+            </ul>
+          </div>
+          <div class="meta"><span class="chip">OpenAI</span><span class="chip">Python</span><span class="chip">TypeScript</span></div>
+        </article>
 
-<section id="contact" class="section alt" data-reveal>
-<div class="container">
-<h2>Let's build something exceptional</h2>
-<p>Have a high-impact project? I partner with teams to ship beautiful, reliable apps.</p>
-<form id="contact-form" class="contact-form" aria-label="Contact form">
-<div class="row">
-<input type="text" name="name" placeholder="Your name" required aria-label="Your name">
-<input type="email" name="email" placeholder="Your email" required aria-label="Your email">
-</div>
-<textarea name="message" rows="5" placeholder="Tell me about your project..." required aria-label="Message"></textarea>
-<button type="submit" class="btn primary">Request an intro call</button>
-</form>
-<p class="contact-alt">Prefer email? <a href="mailto:rabiabembi@gmail.com">rabiabembi@gmail.com</a></p>
-</div>
-</section>
-</main>
+        <article class="card" id="p-ui-kit">
+          <h3>UI Flow Kit — Figma → RN</h3>
+          <p>Design system to production components; onboarding & payments screens.</p>
+          <div class="impact">
+            <ul>
+              <li><b>Problem:</b> Consistency and speed for teams.</li>
+              <li><b>Built:</b> Figma tokens → RN components, accessibility checks.</li>
+              <li><b>Stack:</b> Figma, React Native, Storybook.</li>
+              <li><b>Notes:</b> Dev velocity +X% (placeholder).</li>
+            </ul>
+          </div>
+          <div class="meta"><span class="chip">Figma</span><span class="chip">React Native</span></div>
+        </article>
 
-<footer class="site-footer">
-<div class="container">
-<p>© Rabia Bembi. All rights reserved.</p>
-</div>
-</footer>
+        <article class="card" id="p-email-kit">
+          <h3>Email Kit — HTML templates (Litmus‑ready)</h3>
+          <p>Bulletproof transactional and marketing emails tested across clients.</p>
+          <div class="impact">
+            <ul>
+              <li><b>Problem:</b> Inconsistent rendering across clients.</li>
+              <li><b>Built:</b> Modular templates, inline CSS, dark‑mode tweaks.</li>
+              <li><b>Stack:</b> HTML, MJML/Handlebars, Litmus.</li>
+              <li><b>Notes:</b> Support tickets −X% (placeholder).</li>
+            </ul>
+          </div>
+          <div class="meta"><span class="chip">HTML Email</span><span class="chip">Litmus</span><span class="chip">MJML</span></div>
+        </article>
+      </div>
+    </section>
 
-<script defer src="assets/js/main.js"></script>
+    <!-- NOTES (PERSONAL, NON-PITCH) -->
+    <section id="notes" class="wrap">
+      <div class="section-head">
+        <h2>Notes</h2>
+        <span class="sub">Short write‑ups from the workbench — decisions, trade‑offs, and mistakes I won’t repeat.</span>
+      </div>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Offline‑first in React Native</h3>
+          <p>How I handle cache invalidation, conflict resolution, and background sync on unstable networks.</p>
+        </article>
+        <article class="card">
+          <h3>Design tokens → RN components</h3>
+          <p>Moving from Figma tokens to a typed component kit with Storybook and visual tests.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS (LEARNING‑CENTRIC) -->
+    <section id="certs" class="wrap">
+      <div class="section-head">
+        <h2>Certifications & Learning</h2>
+        <span class="sub">What I’m studying or formalizing — because craft evolves.</span>
+      </div>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>Google Cloud — Associate Cloud Engineer <span class="status progress">In progress</span></h3>
+          <p>Core services, IAM, networking, Cloud Run/Functions deployments.</p>
+        </article>
+        <article class="card">
+          <h3>Firebase Developer <span class="status planned">Planned</span></h3>
+          <p>Auth, Firestore modeling, rules, Functions, analytics.</p>
+        </article>
+        <article class="card">
+          <h3>AWS Cloud Practitioner <span class="status planned">Planned</span></h3>
+          <p>Foundational cloud knowledge complementing GCP skills.</p>
+        </article>
+        <article class="card">
+          <h3>Meta — React Native <span class="status planned">Planned</span></h3>
+          <p>Mobile foundations, performance, release pipelines.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="wrap">
+      <div class="section-head"><h2>Skills</h2><span class="sub">Tools I use often, and a few I’m exploring.</span></div>
+      <div class="grid cols-3">
+        <div class="card"><h3>Frontend</h3><p>React, React Native, Vue.js, TypeScript, HTML/CSS, design systems, accessibility.</p></div>
+        <div class="card"><h3>Backend & Cloud</h3><p>Node.js, PHP, Firebase/Firestore, GCP (Run/Functions, Pub/Sub), REST/GraphQL.</p></div>
+        <div class="card"><h3>AI & Tooling</h3><p>OpenAI API, Python, agents with tools, testing, CI/CD, analytics.</p></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="wrap">
+      <div class="section-head"><h2>Experience</h2><span class="sub">Selective highlights.</span></div>
+      <div class="grid cols-2">
+        <div class="card"><h3 style="margin:0">CygniSoft Inc. — Software Developer</h3><p class="sub" style="margin:6px 0 12px">Jun 2024 – Present • Etobicoke</p><p>Bridge delivery & scope. Own client comms. Ship mobile/web features aligned to business goals.</p></div>
+        <div class="card"><h3 style="margin:0">Freelance — Software Developer</h3><p class="sub" style="margin:6px 0 12px">Jan 2023 – Present • Canada</p><p>End‑to‑end apps: RN + Firebase, Node/PHP, landing page optimization.</p></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="wrap">
+      <div class="section-head"><h2>Testimonials</h2><span class="sub">From teams I’ve shipped with.</span></div>
+      <div class="grid cols-2">
+        <div class="card"><blockquote>“Rabia delivers with polish and pragmatism. Our MVP looked production‑ready and hit timelines.”</blockquote><cite>— Startup Founder (Mobile MVP)</cite></div>
+        <div class="card"><blockquote>“Clear communication, fast iterations, and clean code. Exactly what we needed to get to launch.”</blockquote><cite>— Product Manager</cite></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="wrap">
+      <div class="section-head"><h2>Say hello</h2><span class="sub">If my work resonates, I’m easy to reach.</span></div>
+      <div class="grid cols-2">
+        <div class="card">
+          <form onsubmit="event.preventDefault(); alert('Thanks! I\\'ll reply within 24h.');">
+            <div class="grid cols-2" style="gap:10px">
+              <input aria-label="Name" required name="name" placeholder="Your name" style="padding:12px;border-radius:10px;border:1px solid #d1d5db;background:#fff;color:#111827"/>
+              <input aria-label="Email" required type="email" name="email" placeholder="you@company.com" style="padding:12px;border-radius:10px;border:1px solid #d1d5db;background:#fff;color:#111827"/>
+            </div>
+            <textarea aria-label="Message" required name="message" placeholder="What would you like to chat about?" rows="5" style="margin-top:10px;width:100%;padding:12px;border-radius:10px;border:1px solid #d1d5db;background:#fff;color:#111827"></textarea>
+            <button class="btn primary" style="margin-top:10px" type="submit">Send</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Fast facts</h3>
+          <ul style="margin:8px 0 0 18px;color:#374151">
+            <li>Ontario, Canada</li>
+            <li>Focus: mobile & full‑stack apps</li>
+            <li>Reply time: usually &lt;24h</li>
+          </ul>
+          <div class="meta" style="margin-top:14px">
+            <a class="btn" href="mailto:rabiabembi@gmail.com">Email</a>
+            <a class="btn" href="https://www.linkedin.com/in/rabiabembi" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://topmate.io/rabia_bembi" target="_blank" rel="noopener">Topmate</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> Rabia Bembi — Personal portfolio</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
